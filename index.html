@@ -3,22 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Votre Nom</title>
+<title>Omar Yahiaoui - RTI Algérie</title>
 <style>
-  /* ============================================
-     ZONE FACILE A MODIFIER : couleurs et polices
-     Change juste ces valeurs, tout le reste suit.
-     ============================================ */
   :root {
-    --bg: #16181d;
-    --card-bg: #1f2229;
-    --card-bg-hover: #262a33;
-    --text: #f4f2ee;
-    --text-muted: #9a9fa8;
-    --accent: #e0c48c;
-    --radius: 14px;
-    --font-title: Georgia, 'Times New Roman', serif;
-    --font-body: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --overlay: rgba(6, 8, 10, 0.72);
+    --text: #f5f6f7;
+    --text-muted: #b9bec4;
+    --call-color: #ff8a3d;
+    --whatsapp-color: #ffd23d;
+    --email-color: #3ddc84;
   }
 
   * { box-sizing: border-box; }
@@ -26,76 +19,106 @@
   body {
     margin: 0;
     min-height: 100vh;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-body);
+    font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
-    padding: 48px 20px 60px;
+  }
+
+  .overlay {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--overlay);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 20px 60px;
   }
 
   .page {
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* Photo de profil : remplace l'URL dans le src en bas du fichier HTML */
+  .logo {
+    height: 40px;
+    align-self: flex-end;
+    margin-bottom: 40px;
+  }
+
   .avatar {
-    width: 96px;
-    height: 96px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 18px;
-    border: 2px solid var(--accent);
+    border: 3px solid rgba(255,255,255,0.85);
+    margin-bottom: 20px;
   }
 
   .name {
-    font-family: var(--font-title);
-    font-size: 26px;
-    margin: 0 0 6px;
-    letter-spacing: 0.3px;
+    color: var(--text);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 4px;
   }
 
-  .tagline {
+  .title {
     color: var(--text-muted);
     font-size: 15px;
-    margin: 0 0 32px;
-    line-height: 1.5;
+    margin: 0 0 36px;
   }
 
   .links {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
   }
 
   .link-card {
-    display: block;
-    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 999px;
+    background: rgba(20, 22, 26, 0.55);
     color: var(--text);
     text-decoration: none;
-    padding: 16px 20px;
-    border-radius: var(--radius);
     font-size: 15px;
     font-weight: 500;
+    border: 1.5px solid var(--card-color);
     transition: background 0.15s ease, transform 0.1s ease;
   }
 
   .link-card:hover {
-    background: var(--card-bg-hover);
+    background: rgba(20, 22, 26, 0.8);
   }
 
   .link-card:active {
     transform: scale(0.98);
   }
 
-  .link-card .icon {
-    margin-right: 10px;
+  .call    { --card-color: var(--call-color); }
+  .whatsapp{ --card-color: var(--whatsapp-color); }
+  .email   { --card-color: var(--email-color); }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
   }
 
   footer {
-    margin-top: 40px;
+    margin-top: 44px;
     font-size: 12px;
     color: var(--text-muted);
   }
@@ -103,42 +126,45 @@
 </head>
 <body>
 
-<div class="page">
+<div class="overlay">
+  <div class="page">
 
-  <!-- Remplace le lien de l'image par ta propre photo (ou supprime la balise) -->
-  <img class="avatar" src="https://placehold.co/96x96/e0c48c/16181d?text=Photo" alt="Photo de profil">
+    <img class="logo" src="images/logo.png" alt="RTI Algérie">
 
-  <h1 class="name">Votre Nom</h1>
-  <p class="tagline">Designer &middot; une phrase courte qui te décrit</p>
+    <img class="avatar" src="images/photo.jpg" alt="Omar Yahiaoui">
 
-  <div class="links">
+    <h1 class="name">Omar Yahiaoui</h1>
+    <p class="title">Account Sales Manager</p>
 
-    <!-- Email : remplace l'adresse, le sujet (su=) et le corps (body=) -->
-    <a class="link-card" href="mailto:contact@exemple.com?subject=Bonjour&body=Je%20souhaite%20vous%20contacter">
-      <span class="icon">&#9993;</span>Envoyer un email
-    </a>
+    <div class="links">
 
-    <!-- Téléphone : remplace le numéro au format international -->
-    <a class="link-card" href="tel:+213555123456">
-      <span class="icon">&#9742;</span>Appeler
-    </a>
+      <a class="link-card call" href="tel:+213770907505">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        Call
+      </a>
 
-    <!-- WhatsApp : remplace le numéro (sans le +, sans espace) -->
-    <a class="link-card" href="https://wa.me/213555123456" target="_blank" rel="noopener">
-      <span class="icon">&#128172;</span>WhatsApp
-    </a>
+      <a class="link-card whatsapp" href="https://wa.me/213661907510" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.87 11.93L4 20l4.2-1.1a7.9 7.9 0 0 0 3.84 1h.01a7.94 7.94 0 0 0 5.55-13.58zM12.05 18.4h-.01a6.5 6.5 0 0 1-3.32-.91l-.24-.14-2.47.65.66-2.41-.16-.25a6.55 6.55 0 0 1 10.2-8.1 6.5 6.5 0 0 1 1.94 4.66 6.56 6.56 0 0 1-6.6 6.5zm3.6-4.9c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.14-.42.05a5.36 5.36 0 0 1-2.68-2.34c-.2-.35.2-.32.58-1.07.07-.13.03-.25-.03-.35-.07-.1-.5-1.2-.68-1.6-.18-.4-.36-.34-.5-.35h-.42c-.15 0-.38.05-.58.28-.2.23-.77.75-.77 1.83 0 1.08.79 2.13.9 2.28.11.14 1.53 2.34 3.71 3.19 1.84.72 2.21.58 2.61.54.4-.03 1.28-.52 1.46-1.03.18-.5.18-.93.13-1.02-.06-.1-.2-.15-.4-.24z"/>
+        </svg>
+        WhatsApp
+      </a>
 
-    <!-- Instagram : remplace ton nom d'utilisateur -->
-    <a class="link-card" href="https://instagram.com/tonpseudo" target="_blank" rel="noopener">
-      <span class="icon">&#128247;</span>Instagram
-    </a>
+      <a class="link-card email" href="mailto:omar_yahiaoui@rtialgerie.com">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        Send an Email
+      </a>
 
-    <!-- Ajoute d'autres liens en copiant un bloc <a class="link-card">...</a> -->
+    </div>
+
+    <footer>&copy; 2026 Omar Yahiaoui &middot; RTI Algérie</footer>
 
   </div>
-
-  <footer>&copy; 2026 Votre Nom</footer>
-
 </div>
 
 </body>

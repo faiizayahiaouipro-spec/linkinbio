@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votre Nom</title>
+<style>
+  /* ============================================
+     ZONE FACILE A MODIFIER : couleurs et polices
+     Change juste ces valeurs, tout le reste suit.
+     ============================================ */
+  :root {
+    --bg: #16181d;
+    --card-bg: #1f2229;
+    --card-bg-hover: #262a33;
+    --text: #f4f2ee;
+    --text-muted: #9a9fa8;
+    --accent: #e0c48c;
+    --radius: 14px;
+    --font-title: Georgia, 'Times New Roman', serif;
+    --font-body: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px 60px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+  }
+
+  /* Photo de profil : remplace l'URL dans le src en bas du fichier HTML */
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 18px;
+    border: 2px solid var(--accent);
+  }
+
+  .name {
+    font-family: var(--font-title);
+    font-size: 26px;
+    margin: 0 0 6px;
+    letter-spacing: 0.3px;
+  }
+
+  .tagline {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin: 0 0 32px;
+    line-height: 1.5;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .link-card {
+    display: block;
+    background: var(--card-bg);
+    color: var(--text);
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+
+  .link-card:hover {
+    background: var(--card-bg-hover);
+  }
+
+  .link-card:active {
+    transform: scale(0.98);
+  }
+
+  .link-card .icon {
+    margin-right: 10px;
+  }
+
+  footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Remplace le lien de l'image par ta propre photo (ou supprime la balise) -->
+  <img class="avatar" src="https://placehold.co/96x96/e0c48c/16181d?text=Photo" alt="Photo de profil">
+
+  <h1 class="name">Votre Nom</h1>
+  <p class="tagline">Designer &middot; une phrase courte qui te décrit</p>
+
+  <div class="links">
+
+    <!-- Email : remplace l'adresse, le sujet (su=) et le corps (body=) -->
+    <a class="link-card" href="mailto:contact@exemple.com?subject=Bonjour&body=Je%20souhaite%20vous%20contacter">
+      <span class="icon">&#9993;</span>Envoyer un email
+    </a>
+
+    <!-- Téléphone : remplace le numéro au format international -->
+    <a class="link-card" href="tel:+213555123456">
+      <span class="icon">&#9742;</span>Appeler
+    </a>
+
+    <!-- WhatsApp : remplace le numéro (sans le +, sans espace) -->
+    <a class="link-card" href="https://wa.me/213555123456" target="_blank" rel="noopener">
+      <span class="icon">&#128172;</span>WhatsApp
+    </a>
+
+    <!-- Instagram : remplace ton nom d'utilisateur -->
+    <a class="link-card" href="https://instagram.com/tonpseudo" target="_blank" rel="noopener">
+      <span class="icon">&#128247;</span>Instagram
+    </a>
+
+    <!-- Ajoute d'autres liens en copiant un bloc <a class="link-card">...</a> -->
+
+  </div>
+
+  <footer>&copy; 2026 Votre Nom</footer>
+
+</div>
+
+</body>
+</html>
